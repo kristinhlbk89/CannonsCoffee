@@ -17,6 +17,7 @@ html {
   --sunglow: #ffd034;
   --white: #ffffff;
   --lightblue: #cadbf8;
+  --mainfont: "Montserrat";
 }
 
 body {
@@ -24,9 +25,9 @@ body {
   background-color: #063270;
   margin: 0;
   padding: 0;
-  font-family: "Montserrat";
+  font-family: var(--mainfont);
   font-size: 1.125rem;
-  line-height: 1.5rem;
+  line-height: 1.5;
 }
 
 h1 {
@@ -46,6 +47,19 @@ h2 {
 
 h3 {
   font-size: 1.75rem;
-  line-height: 1.5;
+  line-height: 1.1667;
   font-weight: 300;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.button {
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: .5rem;
 }
