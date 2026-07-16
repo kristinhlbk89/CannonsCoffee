@@ -110,7 +110,6 @@ nav a {
   border-radius: 10px;
 }
 
-
 .button {
   display: inline-block;
   text-transform: uppercase;
@@ -120,7 +119,7 @@ nav a {
   color: var(--white);
 }
 
-.reservebutton {
+.reservebutton, .page2button {
   background-color: var(--vegan);
   margin: .6rem;
 }
@@ -129,7 +128,7 @@ nav a {
   background-color: var(--catalina);
 }
 
-.grid1 {
+.grid1, .lattegrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: var(--white);
@@ -142,7 +141,7 @@ nav a {
   /* object-fit: cover; */ 
 }
 
-.coffee-text, .imgcontainer {
+.coffee-text, .imgcontainer, .latteimg, .latte-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -152,7 +151,6 @@ nav a {
   text-align: left;
   
 }
-
 
 .ourcoffee {
   background-color: var(--lightblue);
