@@ -3,14 +3,15 @@
 :root {
   --black: #000000;
   --catalina: #06327d;
-  --bluetiful: --#2b70e4;
+  --bluetiful: #2b70e4;
   --vegan: #209d5c;
   --sunglow: #ffd034;
   --white: #ffffff;
   --lightblue: #cadbf8;
-  --font: montserrat;
+  --font: "Montserrat";
 }
 
+/* BASIC FORMATTING */
 html {
   box-sizing: border-box;
 }
@@ -90,7 +91,7 @@ nav ul {
 
 header {
   text-align: center;
-  border-bottom: 10px solid var(--vegan);
+  border-bottom: 10px solid var(--sunglow);
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
@@ -112,6 +113,7 @@ h1 {
 
 img {
   max-width: 100%;
+  display: block;
 }
 
 .cards img {
@@ -154,10 +156,14 @@ footer {
   color: var(--white);
   text-align: center;
   padding: 2rem 0;
-  border-top: 15px solid var(sunglow);
+  border-top: 15px solid var(--sunglow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .logo {
+  display: flex;
   align-items: center;
   padding: 1rem;
   gap: .5rem;
@@ -188,7 +194,6 @@ footer {
   } 
   .cards {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
   }
   nav ul {
     justify-content: space-between;
@@ -207,7 +212,6 @@ footer {
   }
   .cards {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
   }
   .logo {
     display: flex;
