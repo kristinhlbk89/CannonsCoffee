@@ -32,24 +32,29 @@
 
         <main>
             <h2>Customer Form</h2>
+
             <form id="inquiry-form">
 
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 <br>
                 <br>
+
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
                 <br>
                 <br>
+
                 <label for="phone">Phone Number:</label>
                 <input type="tel" id="phone" name="phone" required>
                 <br>
                 <br>
+
                 <label for="comments">Comments:</label>
                 <textarea id="comments" name="comments"></textarea>
                 <br>
                 <br>
+
                 <label for="coffee-flavor">Favorite Flavor of Coffee is..</label>
                 <select id="coffee-flavor" name="coffee-flavor">
                     <option value="vanilla">Vanilla</option>
@@ -59,17 +64,22 @@
                 </select>
                 <br>
                 <br>
+
                 <p>What are you interested in?</p>
 
-                <input type="radio" id="buy-coffee" name="interest" value="buying coffee">
+                <input type="radio" id="buy-coffee" name="interest" value="buying coffee" required>
                 <label for="buy-coffee">Buying Coffee</label>
                 <br>
+
                 <input type="radio" id="employment" name="interest" value="seeking employment">
                 <label for="employment">Seeking Employment</label>
                 <br>
                 <br>
+
                 <button type="submit">Submit</button>
+
             </form>
+
             <div id="thank-you-message"></div>
         </main>
 

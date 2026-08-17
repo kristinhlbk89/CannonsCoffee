@@ -1,18 +1,29 @@
-const form = document.querySelector("#login-form");
+let container = document.getElementById("welcome-message");
+let form = document.getElementById("login-form");
 
-form.addEventListener("submit", function (event) {
-    event.preventDefault();
+form.addEventListener("submit", onSubmit);
 
-    const name = document.querySelector("#name").value;
-    const email = document.querySelector("#email").value;
-    const password = document.querySelector("#password").value;
+function onSubmit(event) {
+	event.preventDefault();
 
-    console.log(name);
-    console.log(email);
-    console.log(password);
+	const data = new FormData(form);
+	const dataObj = Object.fromEntries(data.entries());
 
-    const message = `Welcome, ${name}! You are logged in!`;
+    console.log("our data:", dataObj);
+    
+    form.reset();
+    
+	let name = dataObj.name;
+	let email = dataObj.email;
+	let password = dataObj.password;
 
-    const welcomeMessage = document.querySelector("#welcome-message");
-    welcomeMessage.textContent = message;
-});
+	console.log(name);
+	console.log(email);
+	console.log(password);
+
+	let message = `Welcome, ${name}! You are logged in!`;
+
+	let messagePara = document.createElement("p");
+	messagePara.textContent = message;
+	container.appendChild(messagePara);
+}

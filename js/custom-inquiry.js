@@ -1,29 +1,35 @@
-const form = document.querySelector("#inquiry-form");
+let container = document.getElementById("thank-you-message");
+let form = document.getElementById("inquiry-form");
 
-form.addEventListener("submit", function (event) {
-    event.preventDefault();
+form.addEventListener("submit", onSubmit);
 
-    const name = document.querySelector("#name").value;
-    const email = document.querySelector("#email").value;
-    const phone = document.querySelector("#phone").value;
-    const comments = document.querySelector("#comments").value;
-    const favflavor = document.querySelector("#coffee-flavor").value;
+function onSubmit(event) {
+	event.preventDefault();
 
-    const interest = document.querySelector('input[name="interest"]:checked').value;
+	const data = new FormData(form);
+	const dataObj = Object.fromEntries(data.entries());
 
-    console.log(name);
-    console.log(email);
-    console.log(phone);
-    console.log(comments);
-    console.log(favflavor);
-    console.log(interest);
+	console.log("our data:", dataObj);
 
-    const message = `
-        Thank you ${name}! We appreciate your interest in ${interest}.
-        Your favorite coffee flavor is ${favflavor} and your comments are ${comments}.
-        We will soon contact you at ${email} or ${phone}.
-    `;
+	form.reset();
 
-    const thankYouMessage = document.querySelector("#thank-you-message");
-    thankYouMessage.textContent = message;
-});
+	let name = dataObj.name;
+	let email = dataObj.email;
+	let phone = dataObj.phone;
+	let comments = dataObj.comments;
+	let favflavor = dataObj["coffee-flavor"];
+	let interest = dataObj.interest;
+
+	console.log(name);
+	console.log(email);
+	console.log(phone);
+	console.log(comments);
+	console.log(favflavor);
+	console.log(interest);
+
+	let message = `Thank you ${name}! We appreciate your interest in ${interest}. Your favorite coffee flavor is ${favflavor} and your comments are ${comments}. We will soon contact you at ${email} or ${phone}.`;
+
+	let messagePara = document.createElement("p");
+	messagePara.textContent = message;
+	container.appendChild(messagePara);
+}
